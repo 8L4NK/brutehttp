@@ -15,7 +15,7 @@ if len(sys.argv[1:]) != 1:
 target = sys.argv[1]
 bad_login = raw_input('Bad login word (Press enter to analyze html): ')
 if len(bad_login) == 0:
-   r = requests.post(target, data={'username':'test','password':'test'})
+   r = requests.get(target, auth=("nick","passwd"))
    print (r.text)
    sys.exit(0)
 users = open(raw_input('Users wordlist: '))
